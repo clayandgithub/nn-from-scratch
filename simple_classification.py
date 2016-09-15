@@ -9,6 +9,9 @@ def generate_data():
     X, y = datasets.make_moons(200, noise=0.20)
     return X, y
 
+def visualizeData(X, y):
+    plt.scatter(X[:, 0], X[:, 1], s=40, c=y, cmap=plt.cm.Spectral)
+    plt.show()
 
 def visualize(X, y, clf):
     # plt.scatter(X[:, 0], X[:, 1], s=40, c=y, cmap=plt.cm.Spectral)
@@ -41,7 +44,7 @@ def classify(X, y):
 
 def main():
     X, y = generate_data()
-    # visualize(X, y)
+    #visualizeData(X, y)
     clf = classify(X, y)
     visualize(X, y, clf)
 
