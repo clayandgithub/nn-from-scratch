@@ -177,7 +177,7 @@ class Config:
     layers = [2, 4, 2] # number of nodes in each layer
 
 def main():
-    X, y = generate_data(6, 200)
+    X, y = generate_data(6, 2000)
     model = NNModel(Config.layers, Config.epsilon, Config.reg_lambda)
     model.train(X, y, print_loss=True)
     visualize(X, y, model)
